@@ -8,30 +8,57 @@ body {
     padding: 4rem 10vw;
 }
 
-nav li{
-    display: inline-block;
-    margin: 20px 20px 20px 0;
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
 }
 
-nav li:active{
-    color: white
+nav a {
+    font-size: 18pt;
+    font-weight: 900;
+    color: #203891;
+}
+
+nav li {
+    display: inline-block;
+    padding: 20px 0 10px 0;
+    border-radius: 5px;
+}
+
+a.active {
+    border-top: 5px solid #7b91e4;
+    padding-top: 10px;
+}
+
+nav a:hover {
+    color: white;
 }
 
 img {
-    width: 20%;
+    border: 2px dashed #111D4A;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: white;
 }
 
-a {
+img:hover {
+    background-color: rgb(180, 174, 203);
+}
+
+.about img {
+    width: 100%;
+}
+
+nav a {
     text-decoration: none;
 }
 
-a::hover {
-    color: white;
-}
 
 h1 {
     font-size: 30px;
     font-weight: bold;
+    margin-bottom: 2rem;
 }
 
 h2 {
@@ -46,10 +73,6 @@ h3 {
 
 .figure {
     margin-top: 2rem
-}
-
-.banner {
-    width: 100%;
 }
 
 .literature h2,
@@ -79,7 +102,6 @@ h3 {
 .literature div:nth-child(2) {
     grid-column: 2/3;
 }
-
 
 .literature div:nth-child(3) {
     grid-column: 2/3;
