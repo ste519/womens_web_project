@@ -1,121 +1,338 @@
+:root {
+    --purple10: #c2cae8;
+    --purple20: #7b91e4;
+    --purple30: #203891;
+    --purple40: #111D4A;
+}
+
 body {
-    background-color: #C2CAE8;
+    background-color: var(--purple10);
     font-family: 'Libre Baskerville', serif;
+    color: var(--purple40);
+    line-height: 1.5;
     font-size: 16px;
-    color: #111D4A;
-    line-height: 28pt;
-    font-size: 16px;
-    padding: 4rem 10vw;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem 0;
 }
 
 nav a {
-    font-size: 18pt;
+    font-size: 1rem;
     font-weight: 900;
-    color: #203891;
-}
-
-nav li {
-    display: inline-block;
-    padding: 20px 0 10px 0;
-    border-radius: 5px;
-}
-
-a.active {
-    border-top: 5px solid #7b91e4;
-    padding-top: 10px;
-}
-
-nav a:hover {
-    color: white;
-}
-
-img {
-    border: 2px dashed #111D4A;
-    padding: 1rem;
-    border-radius: 10px;
-    background-color: white;
-}
-
-img:hover {
-    background-color: rgb(180, 174, 203);
-}
-
-.about img {
-    width: 100%;
-}
-
-nav a {
+    color: var(--purple30);
     text-decoration: none;
 }
 
+a.active {
+    border-left: 5px solid var(--purple20);
+    padding-left: 10px;
+}
+
+main {
+    padding: 0 1rem;
+}
+
+a.skip {
+    position: absolute;
+    left: -400px;
+    top: -200px;
+}
+
+.banner {
+    max-width: 100vw;
+    width: 100vw;
+    margin-left: -1rem;
+    margin-top: 1rem;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
 
 h1 {
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 2rem;
+}
+
+header {
+    padding: 1rem 1rem 0 1rem;
+}
+
+.literature main h1,
+.history main h1,
+.femdict main h1 {
+    font-size: 1.5rem;
+    color: var(--purple30);
+    margin-top: 1rem;
+}
+
+.literature main h2,
+.history main h2,
+.femdict dt {
+    text-align: center;
+    background: var(--purple30);
+    color: white;
+    padding: 0.5rem 0;
+}
+
+.literature main p {
+    margin-bottom: 1rem;
+}
+
+.femdict dt {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.femdict dd {
+    padding: 1rem;
+    font-weight: bold;
+}
+
+.femdict dd:first-of-type {
+    padding-bottom: 0;
+}
+
+.literature main>div,
+.history main>div,
+.femdict dl>div {
+    background: white;
+}
+
+.literature main>div div:nth-child(2),
+.history main p {
+    padding: 1rem;
 }
 
 h2 {
-    font-size: 26px;
+    font-size: 1.5rem;
     font-weight: bold;
+    margin-top: 1rem;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: 1rem;
     font-weight: bold;
 }
 
-.figure {
-    margin-top: 2rem
+header a:hover,
+header a:focus {
+    color: white;
 }
 
-.literature h2,
-.literature h3 {
-    margin: 10px 0;
+nav ul {
+    text-align: end;
+    line-height: 2;
 }
 
-.literature>div {
-    margin: 3rem 0;
-    background: rgb(194, 202, 232);
-    padding: 3rem 0;
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: 40% 60%;
-    gap: 20px;
+header>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.literature>div img {
+.menu {
+    font-size: 20px;
+    color: var(--purple30);
+}
+
+footer {
+    background-color: #614ad3;
+    background-image: url(../images/woman-bg.svg);
+    background-repeat: repeat-x;
+    background-size: 200px;
+    background-position: right bottom;
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+    height: 200px;
+}
+
+#disclaimer {
+    background-color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+    transition-property: color, background-color, font-size;
+    transition-duration: 10ms;
+    transition-timing-function: ease-in;
+}
+
+#disclaimer:hover{
+    color: white;
+    background-color: #111D4A;
+    font-size: large;
+}
+
+#disclaimer i {
+    display: none;
+}
+
+.literature img,
+.history img {
     width: 100%;
 }
 
-.literature div:nth-child(1) {
-    grid-column: 1/2;
-    grid-row: 1/-1;
+#myNav {
+    display: none;
 }
 
-.literature div:nth-child(2) {
-    grid-column: 2/3;
-}
+@media screen and (min-width: 800px) {
+    #myNav {
+        display: block;
+    }
 
-.literature div:nth-child(3) {
-    grid-column: 2/3;
-}
+    nav a {
+        font-size: 1.5rem;
+    }
 
-.literature p {
-    font-size: 16px;
-}
+    .banner {
+        margin-left: -10vw;
+        margin-bottom: 2rem;
+    }
 
-.tops {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: white;
-    padding: 20px;
-    border-radius: 20px;
+    #myNav ul {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-evenly;
+        margin-top: 1rem;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    main {
+        padding: 0 10vw;
+    }
+
+    nav li {
+        display: inline-block;
+        padding: 20px 0 10px 0;
+        border-radius: 5px;
+    }
+
+    header h1 {
+        margin: 2rem auto 0 auto;
+    }
+
+    .literature main h1,
+    .history main h1,
+    .femdict main h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .literature main>div {
+        display: grid;
+        align-items: flex-start;
+        grid-template-columns: 3fr 5fr;
+        margin-bottom: 2rem;
+    }
+
+    .literature main>div div:nth-child(2), .history main p {
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-top: 0;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    #disclaimer {
+        display: flex;
+        align-items: center;
+    }
+
+    #disclaimer i {
+        display: block;
+        width: 150px;
+    }
+
+    .femdict dd:first-of-type {
+        padding-bottom: 1rem;
+    }
+
+    .literature main h2,
+    .history main h2,
+    .femdict dt {
+        padding: 1.5rem 0;
+        margin-top: 0;
+    }
+
+
+    .literature>div {
+        margin: 3rem 0;
+        background: var(--purple10);
+        padding: 3rem 0;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        gap: 20px;
+    }
+
+    .literature>div img {
+        width: 100%;
+    }
+
+    .literature div:nth-child(1) {
+        grid-column: 1/2;
+        grid-row: 1/-1;
+    }
+
+    .literature div:nth-child(2) {
+        grid-column: 2/3;
+    }
+
+    .literature div:nth-child(3) {
+        grid-column: 2/3;
+    }
+
+    .literature p {
+        font-size: 16px;
+    }
+
+    .tops {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    header h1 {
+        text-align: center;
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+
+    .femdict dt {
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: var(--purple30);
+        color: white;
+        padding: 1rem;
+    }
+
+    dl>div {
+        background: white;
+        padding: rem;
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+        grid-template-columns: 1fr 2fr 4fr;
+    }
+
+    dl dd {
+        padding: 2rem;
+    }
+
+    .fa-exclamation {
+        font-weight: 900;
+        font-size: 100px;
+        width: 100px;
+        text-align: center;
+        color: var(--purple10);
+    }
 }

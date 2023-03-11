@@ -14,15 +14,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
-  <!-- connect to a Font Aweseom font -->
+  <!-- connect to a Font Awesome font -->
+  <script src="https://kit.fontawesome.com/7336eee9b5.js" crossorigin="anonymous"></script>
   <!-- connect to a favicon -->
+
+  <script src="js/myscripts.js"></script>
 
   <title>Women's Web</title>
 </head>
 
 <body class="about">
+  <a class="skip" href="#main">Skip to Main Content</a>
   <header>
-    <nav>
+      <div>
+        <h1> Woman's Web </h1>
+        <a href="javascript:void(0);" class="menu" onclick="navControl()">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+      </div>
+    <nav id="myNav">
       <ul>
         <li><a class="active" href="index.html">About</a></li>
         <li><a href="literature.html">Literature</a></li>
@@ -30,8 +40,6 @@
         <li><a href="femdict.html">Feminist Dictionary</a></li>
       </ul>
     </nav>
-
-    <h1> Woman's Web </h1>
   </header>
 
   <main>
@@ -40,7 +48,8 @@
     <div>
       <p>
         This website started as an idea when Kelsey Toporski was a freshman in college taking my first <a
-          href="https://lsa.umich.edu/content/michigan-lsa/wgs/en.html"> Women's Studies</a> class. As a junior, she had the skill set to make it
+          href="https://lsa.umich.edu/content/michigan-lsa/wgs/en.html"> Women's Studies</a> class. As a junior, she had
+        the skill set to make it
         happen. Growing up in a small, rural, conservative town, this class was really her first introduction to
         feminism and feminist thought, and she wanted to share her new found knowledge with others. This website is
         where a lot of feminist things could be compiled in one place, purely because people might not otherwise know
@@ -51,21 +60,21 @@
       </p>
     </div>
 
-    Literature
+    <h2>Literature</h2>
     <div>
       <p>
         This page features books written by women and for women, books and essays about feminism, poems, plays, and bios
         of female writers.
       </p>
     </div>
-    History / Politics
+    <h2>History / Politics</h2>
     <div>
       <p>
         This page features bios of important women in history and women currently in Congress or otherwise politically
         involved.
       </p>
     </div>
-    Feminist Dictionary
+    <h2>Feminist Dictionary</h2>
     <div>
       <p>
         This page features a collection of important feminist terminology that might make reading easier. These will
@@ -73,12 +82,15 @@
       </p>
     </div>
 
-    <div>
-      <p>
-        <span>Kelsey's DISCLAIMER:</span> I did not know everything!! I'm only human - I'm still growing and learning
-        and I have a limited knowledge of things, but I will do my best and work to make this page as inclusive and
-        unbiased as possible.
-      </p>
+    <div id="disclaimer">
+      <i class="fa-solid fa-exclamation"></i>
+      <div>
+        <h3>Kelsey's DISCLAIMER:</h3>
+        <p>
+          I did not know everything!! I'm only human - I'm still growing and learning and I have a limited knowledge of
+          things, but I will do my best and work to make this page as inclusive and unbiased as possible.
+        </p>
+      </div>
     </div>
   </main>
 
