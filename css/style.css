@@ -62,8 +62,11 @@ header {
     margin-top: 1rem;
 }
 
-.literature main h2,
-.history main h2,
+.literature h2, .history h2 {
+    text-align: center;
+    padding: 1rem;
+}
+
 .femdict dt {
     text-align: center;
     background: var(--purple30);
@@ -71,12 +74,16 @@ header {
     padding: 0.5rem 0;
 }
 
-.literature main p {
+main p {
     margin-bottom: 1rem;
 }
 
+main p:last-child {
+    margin-bottom: 0;
+}
+
 .femdict dt {
-    font-size: 1.5rem;
+    font-size: 20px;
     margin-top: 1rem;
     font-weight: bold;
 }
@@ -90,13 +97,12 @@ header {
     padding-bottom: 0;
 }
 
-.literature main>div,
-.history main>div,
+.person,
 .femdict dl>div {
     background: white;
 }
 
-.literature main>div div:nth-child(2),
+.person div:nth-child(2),
 .history main p {
     padding: 1rem;
 }
@@ -142,7 +148,8 @@ footer {
     color: white;
     padding: 1rem;
     margin-top: 2rem;
-    height: 200px;
+    height: 220px;
+    position: relative;
 }
 
 #disclaimer {
@@ -154,7 +161,7 @@ footer {
     transition-timing-function: ease-in;
 }
 
-#disclaimer:hover{
+#disclaimer:hover {
     color: white;
     background-color: #111D4A;
     font-size: large;
@@ -173,9 +180,41 @@ footer {
     display: none;
 }
 
+.backtotop{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backtotop:active, .backtotop:hover, .backtotop:focus{
+    background-color:var(--purple20);
+}
+
+.backtotop i {
+    font-size: 30px;
+    color: var(--purple40);
+}
+
+.person:hover, .person:focus, .femdict dl>div:hover, .femdict dl>div:focus {
+    box-shadow: rgb(0 0 0 / 30%) 5px 5px 20px;
+}
+
 @media screen and (min-width: 800px) {
     #myNav {
         display: block;
+        margin-bottom: 2rem;
+    }
+
+    .about h2 {
+        margin-top: 1rem;
     }
 
     nav a {
@@ -200,6 +239,7 @@ footer {
 
     main {
         padding: 0 10vw;
+        line-height: 2;
     }
 
     nav li {
@@ -219,14 +259,14 @@ footer {
         font-size: 30px;
     }
 
-    .literature main>div {
+    .person {
         display: grid;
         align-items: flex-start;
         grid-template-columns: 3fr 5fr;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
     }
 
-    .literature main>div div:nth-child(2), .history main p {
+    .person div:nth-child(2){
         padding: 2rem;
     }
 
@@ -275,30 +315,17 @@ footer {
         width: 100%;
     }
 
-    .literature div:nth-child(1) {
+    .person div:nth-child(1) {
         grid-column: 1/2;
         grid-row: 1/-1;
+        height: 100%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
     }
 
-    .literature div:nth-child(2) {
+    .person div:nth-child(2) {
         grid-column: 2/3;
-    }
-
-    .literature div:nth-child(3) {
-        grid-column: 2/3;
-    }
-
-    .literature p {
-        font-size: 16px;
-    }
-
-    .tops {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: white;
-        padding: 20px;
-        border-radius: 20px;
     }
 
     header h1 {
@@ -312,16 +339,20 @@ footer {
         font-weight: bold;
         background-color: var(--purple30);
         color: white;
-        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .history main p{
+        padding: 0;
     }
 
     dl>div {
-        background: white;
-        padding: rem;
         display: grid;
         gap: 2rem;
         margin: 2rem 0;
-        grid-template-columns: 1fr 2fr 4fr;
+        grid-template-columns: 2fr 2fr 4fr;
     }
 
     dl dd {
@@ -334,5 +365,17 @@ footer {
         width: 100px;
         text-align: center;
         color: var(--purple10);
+    }
+
+    main h1{
+        display: none;
+    }
+
+    #Intersectionality{
+        font-size: 1.5vw;
+    }
+
+    #Heteronormativity{
+        font-size: 1.5vw;
     }
 }
