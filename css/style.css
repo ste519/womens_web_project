@@ -6,11 +6,14 @@
 }
 
 body {
-    background-color: var(--purple10);
     font-family: 'Libre Baskerville', serif;
     color: var(--purple40);
     line-height: 1.5;
     font-size: 16px;
+    background: linear-gradient(90deg, #d4c2e8, var(--purple10) ,var(--purple10), #a8d4de);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 }
 
 nav a {
@@ -27,6 +30,7 @@ a.active {
 
 main {
     padding: 0 1rem;
+    padding-top: 64px;
 }
 
 a.skip {
@@ -39,7 +43,6 @@ a.skip {
     max-width: 100vw;
     width: 100vw;
     margin-left: -1rem;
-    margin-top: 1rem;
     padding: 0;
     border: none;
     border-radius: 0;
@@ -51,7 +54,12 @@ h1 {
 }
 
 header {
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem;
+    position: fixed;
+    width: 100vw;
+    background: linear-gradient(90deg, #d4c2e8, var(--purple10) ,var(--purple10), #c2e1e8);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
 
 .literature main h1,
@@ -62,7 +70,8 @@ header {
     margin-top: 1rem;
 }
 
-.literature h2, .history h2 {
+.literature h2,
+.history h2 {
     text-align: center;
     padding: 1rem;
 }
@@ -180,22 +189,14 @@ footer {
     display: none;
 }
 
-.backtotop{
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: 20px;
-    right: 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.backtotop {
+    display: none
 }
 
-.backtotop:active, .backtotop:hover, .backtotop:focus{
-    background-color:var(--purple20);
+.backtotop:active,
+.backtotop:hover,
+.backtotop:focus {
+    background-color: var(--purple20);
 }
 
 .backtotop i {
@@ -203,13 +204,32 @@ footer {
     color: var(--purple40);
 }
 
-.person:hover, .person:focus, .femdict dl>div:hover, .femdict dl>div:focus {
+.person:hover,
+.person:focus,
+.femdict dl>div:hover,
+.femdict dl>div:focus {
     box-shadow: rgb(0 0 0 / 30%) 5px 5px 20px;
 }
 
-@media screen and (min-width: 800px) {
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media screen and (min-width: 768px) {
     #myNav {
         display: block;
+    }
+
+    .person {
         margin-bottom: 2rem;
     }
 
@@ -227,10 +247,10 @@ footer {
     }
 
     #myNav ul {
-        display: flex;
+        display: grid;
         gap: 2rem;
-        justify-content: space-evenly;
-        margin-top: 1rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        text-align: center;
     }
 
     .menu {
@@ -248,6 +268,10 @@ footer {
         border-radius: 5px;
     }
 
+    header {
+        position: initial;
+    }
+
     header h1 {
         margin: 2rem auto 0 auto;
     }
@@ -257,26 +281,6 @@ footer {
     .femdict main h1 {
         text-align: center;
         font-size: 30px;
-    }
-
-    .person {
-        display: grid;
-        align-items: flex-start;
-        grid-template-columns: 3fr 5fr;
-        margin-bottom: 4rem;
-    }
-
-    .person div:nth-child(2){
-        padding: 2rem;
-    }
-
-    h2 {
-        font-size: 26px;
-        margin-top: 0;
-    }
-
-    h3 {
-        font-size: 22px;
     }
 
     #disclaimer {
@@ -294,8 +298,7 @@ footer {
     }
 
     .literature main h2,
-    .history main h2,
-    .femdict dt {
+    .history main h2 {
         padding: 1.5rem 0;
         margin-top: 0;
     }
@@ -339,20 +342,18 @@ footer {
         font-weight: bold;
         background-color: var(--purple30);
         color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        grid-column: 1/span 2;
+        margin-top: 0;
     }
 
-    .history main p{
+    .history main p {
         padding: 0;
     }
 
     dl>div {
         display: grid;
-        gap: 2rem;
         margin: 2rem 0;
-        grid-template-columns: 2fr 2fr 4fr;
+        grid-template-columns: 2fr 4fr;
     }
 
     dl dd {
@@ -367,15 +368,78 @@ footer {
         color: var(--purple10);
     }
 
-    main h1{
+    main h1 {
         display: none;
     }
 
-    #Intersectionality{
+    .backtotop {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+    }
+
+    .backtotop i {
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .person {
+        display: grid;
+        align-items: flex-start;
+        grid-template-columns: 3fr 5fr;
+        margin-bottom: 4rem;
+    }
+
+    .person div:nth-child(2) {
+        padding: 2rem;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-top: 0;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    dl>div {
+        grid-template-columns: 2fr 2fr 4fr;
+    }
+
+    #Intersectionality {
         font-size: 1.5vw;
     }
 
-    #Heteronormativity{
+    #Heteronormativity {
         font-size: 1.5vw;
+    }
+}
+
+@media screen and (prefers-reduced-motion) { 
+    body {
+        font-family: 'Libre Baskerville', serif;
+        color: var(--purple40);
+        line-height: 1.5;
+        font-size: 16px;
+        background: var(--purple10);
+        animation: none;
+        height: inherit;
+    }
+
+    #disclaimer:hover{
+        transition:none;
+        background-color: white;
+        color: initial;
+        font-size: initial;
     }
 }
