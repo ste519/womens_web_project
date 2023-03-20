@@ -10,7 +10,7 @@ body {
     color: var(--purple40);
     line-height: 1.5;
     font-size: 16px;
-    background: linear-gradient(90deg, #d4c2e8, var(--purple10) ,var(--purple10), #a8d4de);
+    background: linear-gradient(90deg, #d4c2e8, var(--purple10) ,var(--purple10), #b4dae2);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;
@@ -57,7 +57,7 @@ header {
     padding: 1rem;
     position: fixed;
     width: 100vw;
-    background: linear-gradient(90deg, #d4c2e8, var(--purple10) ,var(--purple10), #c2e1e8);
+    background: linear-gradient(90deg, #d4c2e8, var(--purple10) ,var(--purple10), #b4dae2);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 }
