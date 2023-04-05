@@ -24,10 +24,11 @@
 </head>
 
 <body class="history">
+  <a class="skip" href="#main">Skip to Main Content</a>
   <header>
     <div>
       <h1> Woman's Web </h1>
-      <a href="javascript:void(0);" class="menu" onclick="navControl()">
+      <a href="javascript:void(0);" class="menu" onclick="navControl()" aria-label="hamburger menu">
         <i class="fa-solid fa-bars"></i>
       </a>
     </div>
@@ -47,7 +48,7 @@
     <!-- interpretation of equity from https://everydayfeminism.com/2014/09/equality-is-not-enough/ -->
   </header>
 
-  <main>
+  <main id="main">
     <h1>History &amp; Politics</h1>
     <div class="person">
       <div>
@@ -514,7 +515,7 @@
   </main>
   <footer>
     <p class="thanks">
-      Thanks for visiting! <i class="far fa-grin"></i>
+      <i class="fa-solid fa-star  blinking"></i> Thanks for visiting! <i class="fa-solid fa-star  blinking"></i>
     </p>
     <p>Orginal content created by Kelsey Toporski 2019</p>
     <a href="#top" class="backtotop" aria-label="Back to Top"><i class="fa-solid fa-angles-up"></i></a>
